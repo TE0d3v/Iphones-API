@@ -10,7 +10,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-
 sequelize
   .sync({ alter: true }) //cria/atualiza as tabelas no banco de dados
   .then(() => {
