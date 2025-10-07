@@ -28,11 +28,11 @@ const Iphone = sequelize.define('Iphone', {
     },
     originalprice: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: true,
     },
     rating: {
         type: DataTypes.FLOAT,
-        allowNull: false,
+        allowNull: true,
     }
 })
 

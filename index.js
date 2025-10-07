@@ -35,7 +35,9 @@ io.on("connection", (socket) => {
   socket.on('create-iphones', async (data) => {
     try {
       const newIphone = await Iphone.create(data);
-      socket.emit('iphone-created', newIphone);
+      io.emit('iphone-created', newIphone);
+
+      const allIphones = await Iphone.findAll();
     } catch (error) {
       console.error("error creating iphones:", error);
       socket.emit('error', 'failed to create iphone');
