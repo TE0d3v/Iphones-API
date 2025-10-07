@@ -2,8 +2,6 @@ const express = require('express')
 const sequelize = require('./src/config/database');
 const User = require('./src/models/User');
 const Iphone = require('./src/models/Iphone')
-const { createServer } = require("http");
-const { Server } = require("socket.io");
 
 const app = express()
 const port = 3000
