@@ -4,7 +4,7 @@ const sequelize = require('../config/database')
 const Iphone = sequelize.define('Iphone', {
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     model: {
         type: DataTypes.STRING,
@@ -26,9 +26,9 @@ const Iphone = sequelize.define('Iphone', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    originalprice: {
+    originalPrice: {
         type: DataTypes.FLOAT,
-        allowNull: true,
+        allowNull: true
     },
     rating: {
         type: DataTypes.FLOAT,
