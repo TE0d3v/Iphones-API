@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { createIphone } = require('../controllers/iphone.controller');
+const { createIphone, getAllIphones } = require('../controllers/iphone.controller');
+
 
 router.post('/iphones', createIphone);
+router.get('/iphones', getAllIphones);
 
 module.exports = router;

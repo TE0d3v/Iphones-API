@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const sequelize = require('./src/config/database');
 const User = require('./src/models/User');
 const Iphone = require('./src/models/Iphone')
@@ -11,6 +12,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(iphoneRoutes);
 

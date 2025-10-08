@@ -10,6 +10,16 @@ async function createIphone(req, res) {
     }
 }
 
+async function getAllIphones(req, res) {
+    try {
+        const iphones = await Iphone.findAll();
+        res.status(200).json(iphones);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 module.exports = {
     createIphone,
+    getAllIphones,
 };
