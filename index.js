@@ -3,6 +3,7 @@ const sequelize = require('./src/config/database');
 const User = require('./src/models/User');
 const Iphone = require('./src/models/Iphone')
 const iphoneRoutes = require('./src/router/iphone.routes');
+const emailRoutes = require('./src/router/email.routes');
 
 const app = express()
 const port = 3000
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 app.use(iphoneRoutes);
+app.use(emailRoutes);
 
 sequelize
   .sync({ alter: true }) //cria/atualiza as tabelas no banco de dados
