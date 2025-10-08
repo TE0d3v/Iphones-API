@@ -3,9 +3,12 @@ const sequelize = require('./src/config/database');
 const User = require('./src/models/User');
 const Iphone = require('./src/models/Iphone')
 const iphoneRoutes = require('./src/router/iphone.routes');
-
+const cors = require('cors')
 const app = express()
 const port = 3000
+
+app.use(cors())
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
